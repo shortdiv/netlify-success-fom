@@ -11,7 +11,25 @@
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <form
+        name="contact-form"
+        class="contact-form"
+        method="POST"
+        data-netlify="true"
+        action="/success"
+      >
+        <input type="hidden" name="form-name" value="contact-form" />
+        <label> name: </label>
+        <input type="text" name="name" class="input" />
+        <label> email: </label>
+        <input type="email" name="email" class="input" required />
+        <label> message: </label>
+        <textarea name="message" class="textarea" placeholder="message">
+        </textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
